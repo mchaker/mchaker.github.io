@@ -17,7 +17,7 @@
       <description>link to original stack overflow post
 First, run the following to establish your extended bash history file:
 cat ~/.bash_history &amp;gt;&amp;gt; ~/.bash_history_extended I added the following to my .bashrc:
-export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&amp;#34;history -a; $PROMPT_COMMAND&amp;#34; Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.</description>
+1 2 3 4  export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&amp;#34;history -a; $PROMPT_COMMAND&amp;#34;   Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.</description>
     </item>
     
   </channel>
