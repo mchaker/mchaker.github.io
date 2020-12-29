@@ -7,7 +7,7 @@
     <meta name="description" content="link to original stack overflow post
 First, run the following to establish your extended bash history file:
 cat ~/.bash_history &gt;&gt; ~/.bash_history_extended I then added the following to my .bashrc:
-1 2 3 4 5  export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&#34;history -a; $PROMPT_COMMAND&#34; 1---------2---------3---------4---------5---------6---------7---------8--------   Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.">
+1 2 3 4  export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&#34;history -a; $PROMPT_COMMAND&#34;   Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.">
     <link rel="canonical" href="/post/extended-bash-history/">
     <meta property="og:title" content="Extended Bash History">
     <meta property="og:type" content="article">
@@ -15,7 +15,7 @@ cat ~/.bash_history &gt;&gt; ~/.bash_history_extended I then added the following
     <meta property="og:description" content="link to original stack overflow post
 First, run the following to establish your extended bash history file:
 cat ~/.bash_history &gt;&gt; ~/.bash_history_extended I then added the following to my .bashrc:
-1 2 3 4 5  export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&#34;history -a; $PROMPT_COMMAND&#34; 1---------2---------3---------4---------5---------6---------7---------8--------   Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.">
+1 2 3 4  export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&#34;history -a; $PROMPT_COMMAND&#34;   Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.">
     <meta property="og:site_name" content="wetware">
     <link rel="stylesheet" href="/css/main.min.d6240c948b42531a0323b0ece4e9499b7642d0929a9047595c57e959c11dc0bd.css" integrity="sha256-1iQMlItCUxoDI7Ds5OlJm3ZC0JKakEdZXFfpWcEdwL0=">
     <meta name="generator" content="Hugo 0.79.1" />
@@ -86,14 +86,12 @@ if (!doNotTrack) {
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bashrc" data-lang="bashrc"><span class="nb">export</span> <span class="nv">HISTFILESIZE</span><span class="o">=</span>
 <span class="nb">export</span> <span class="nv">HISTSIZE</span><span class="o">=</span>
 <span class="nb">export</span> <span class="nv">HISTFILE</span><span class="o">=</span>~/.bash_history_extended
 <span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s2">&#34;history -a; </span><span class="nv">$PROMPT_COMMAND</span><span class="s2">&#34;</span>
-1---------2---------3---------4---------5---------6---------7---------8--------
 </code></pre></td></tr></table>
 </div>
 </div><p>Remember to run <code>source ~/.bashrc</code> in any running shells/terminal windows to get the latest bash history config established.</p>
