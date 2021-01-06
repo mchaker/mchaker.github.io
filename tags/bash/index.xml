@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on wetware</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on wetware</description>
+    <title>bash on wetware</title>
+    <link>/tags/bash/</link>
+    <description>Recent content in bash on wetware</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Jan 2021 19:24:08 -0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Comcast Business IPv6 Prefix Notes</title>
-      <link>/post/comcast-business-ipv6-prefix-notes/</link>
-      <pubDate>Tue, 05 Jan 2021 19:24:08 -0800</pubDate>
-      
-      <guid>/post/comcast-business-ipv6-prefix-notes/</guid>
-      <description>original post by John Burwell can be found here
-Here are my notes from this weekend&amp;rsquo;s IPv6 prefix exhaustion experiment.
-Comcast delegates to my router a /59 prefix, instead of a /60. This is unexpected, but it&amp;rsquo;s okay, because one /59 is two /60s. A two-fer.
-On the one hand, if you have only one router, this is a limitation; out of the /56 allocated to your account, there are 8 /59s, with only the two /60s per /59.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 27 Dec 2020 16:09:25 -0800</lastBuildDate><atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extended Bash History</title>
       <link>/post/extended-bash-history/</link>

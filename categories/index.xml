@@ -6,6 +6,25 @@
     <description>Recent content in Categories on wetware</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 05 Jan 2021 19:24:08 -0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>undocumented-in-the-wild</title>
+      <link>/categories/undocumented-in-the-wild/</link>
+      <pubDate>Tue, 05 Jan 2021 19:24:08 -0800</pubDate>
+      
+      <guid>/categories/undocumented-in-the-wild/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>/categories/howto/</link>
+      <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
+      
+      <guid>/categories/howto/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

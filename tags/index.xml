@@ -6,6 +6,52 @@
     <description>Recent content in Tags on wetware</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 05 Jan 2021 19:24:08 -0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>comcast</title>
+      <link>/tags/comcast/</link>
+      <pubDate>Tue, 05 Jan 2021 19:24:08 -0800</pubDate>
+      
+      <guid>/tags/comcast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ipv6</title>
+      <link>/tags/ipv6/</link>
+      <pubDate>Tue, 05 Jan 2021 19:24:08 -0800</pubDate>
+      
+      <guid>/tags/ipv6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>/tags/bash/</link>
+      <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
+      
+      <guid>/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>configuration</title>
+      <link>/tags/configuration/</link>
+      <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
+      
+      <guid>/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

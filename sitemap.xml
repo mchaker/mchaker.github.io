@@ -3,26 +3,78 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/comcast/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/comcast-business-ipv6-prefix-notes/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ipv6/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/undocumented-in-the-wild/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-01-05T19:24:08-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/bash/</loc>
+    <lastmod>2020-12-27T16:09:25-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/configuration/</loc>
+    <lastmod>2020-12-27T16:09:25-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/extended-bash-history/</loc>
     <lastmod>2020-12-27T16:09:25-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/categories/howto/</loc>
     <lastmod>2020-12-27T16:09:25-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/tags/linux/</loc>
     <lastmod>2020-12-27T16:09:25-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
 </urlset>

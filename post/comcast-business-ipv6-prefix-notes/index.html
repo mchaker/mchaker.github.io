@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=en-us><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Comcast Business IPv6 Prefix Notes - wetware</title>
+    <meta name="description" content="original post by John Burwell can be found here
+Here are my notes from this weekend&rsquo;s IPv6 prefix exhaustion experiment.
+Comcast delegates to my router a /59 prefix, instead of a /60. This is unexpected, but it&rsquo;s okay, because one /59 is two /60s. A two-fer.
+On the one hand, if you have only one router, this is a limitation; out of the /56 allocated to your account, there are 8 /59s, with only the two /60s per /59.">
+    <link rel="canonical" href="/post/comcast-business-ipv6-prefix-notes/">
+    <meta property="og:title" content="Comcast Business IPv6 Prefix Notes">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/post/comcast-business-ipv6-prefix-notes/">
+    <meta property="og:description" content="original post by John Burwell can be found here
+Here are my notes from this weekend&rsquo;s IPv6 prefix exhaustion experiment.
+Comcast delegates to my router a /59 prefix, instead of a /60. This is unexpected, but it&rsquo;s okay, because one /59 is two /60s. A two-fer.
+On the one hand, if you have only one router, this is a limitation; out of the /56 allocated to your account, there are 8 /59s, with only the two /60s per /59.">
+    <meta property="og:site_name" content="wetware">
+    <link rel="stylesheet" href="/css/main.min.d6240c948b42531a0323b0ece4e9499b7642d0929a9047595c57e959c11dc0bd.css" integrity="sha256-1iQMlItCUxoDI7Ds5OlJm3ZC0JKakEdZXFfpWcEdwL0=">
+    <meta name="generator" content="Hugo 0.79.1" />
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-66401342-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body><header class="site-header">
+    <nav class="site-nav" role="navigation" aria-label="breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/">
+    <span itemprop="name">wetware</span>
+  </a>
+  <meta itemprop="position" content="0" />
+</li>/<li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/post/">
+    <span itemprop="name">post</span>
+  </a>
+  <meta itemprop="position" content="0" />
+</li>/<li class="breadcrumb-item active hidden" aria-current="page"
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/post/comcast-business-ipv6-prefix-notes/">
+    <span itemprop="name">comcast-business-ipv6-prefix-notes</span>
+  </a>
+  <meta itemprop="position" content="1" />
+</li></ol>
+    </nav>
+    <h1 class="site-title hidden">
+		<a href="/">wetware</a>
+    </h1>
+</header>
+<main id="content">
+<article role="article" class="content post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">        
+        <h2 class="post-title" itemprop="name headline">Comcast Business IPv6 Prefix Notes</h2>
+        <span class="post-meta">
+            <time class="date-published" datetime="2021-01-05T19:24:08&#43;07:00" itemprop="datePublished">
+                Tue, 5 Jan 2021
+            </time>
+            
+            <ul id="tags">
+              
+                <li> <a href="/tags/ipv6">#ipv6</a> </li>
+              
+                <li> <a href="/tags/comcast">#comcast</a> </li>
+              
+            </ul>
+            
+        </span>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+        <p><em>
+<a href="http://setupnotes.gozoinks.com/comcast-IPv6-prefix-exhaustion" target="_blank" rel="nofollow noreferrer noopener">original post by John Burwell can be found here</a></em></p>
+<p>Here are my notes from this weekend&rsquo;s IPv6 prefix exhaustion experiment.</p>
+<p>Comcast delegates to my router a /59 prefix, instead of a /60. This is unexpected, but it&rsquo;s okay, because one /59 is two /60s. A two-fer.</p>
+<p>On the one hand, if you have only one router, this is a limitation; out of the /56 allocated to your account, there are 8 /59s, with only the two /60s per /59.</p>
+<h2 id="59-prefixes-in-a-56">/59 Prefixes in a /56:</h2>
+<table>
+<thead>
+<tr>
+<th>Prefix length</th>
+<th>/59 Subnet index</th>
+<th>/60 Subnet prefixes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/56</td>
+<td>1</td>
+<td>00</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>20</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td>40</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>50</td>
+</tr>
+<tr>
+<td></td>
+<td>4</td>
+<td>60</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>70</td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>80</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>90</td>
+</tr>
+<tr>
+<td></td>
+<td>6</td>
+<td>A0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>B0</td>
+</tr>
+<tr>
+<td></td>
+<td>7</td>
+<td>C0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>D0</td>
+</tr>
+<tr>
+<td></td>
+<td>8</td>
+<td>E0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>F0</td>
+</tr>
+</tbody>
+</table>
+<p>You can further assign or delegate neither, either, or both of those /60 subnets, or you can allocate any of the /64s from either of the /60s, so that&rsquo;s still a fair amount of subnets. In a small organization like mine, using a handful of subnets for each of a handful of locations, that’s easily plenty. But for organizations that have a lot more VLANs, like one for each department or team, or many locations, 32 /64s gets a little tight.</p>
+<p>That is, if you have only one router. To get at all those other /59 subnets presumably waiting to be delegated, you need either to request more than one delegation for your one router, or you need more than one router.</p>
+<p>To put it another way, your /56 from Comcast supports up to eight routers, with each getting one /59, equal to two /60s or 32 /64s.</p>
+<h1 id="the-setup">The setup</h1>
+<p>To see how this works, I wanted to boot up multiple routers all connected to the cable modem, to see what prefixes are delegated to each one and how many would get a delegation. My guess was that the first seven routers would get a delegation, and that the eighth router would either get no delegation or would steal the delegation from the main firewall.</p>
+<p>I set up ten pfsense virtual machines in vmware Fusion on my Mac, so that I would have seven routers plus three spares. On the first one, I configured one interface to go to my WAN VLAN, then another interface to go to a “Private to my Mac” VLAN.</p>
+<p>In the pfsense installer on the first VM, I proceeded as far as the “Reboot” screen, then stopped it and duplicated it nine times. Each would boot up, connect to the cable modem, and automatically configure its interfaces. This does result in ten DHCP servers jostling for authority on vmware’s private network, which is bad in production, but of no consequence for this procedure.</p>
+<p>My main router already had been delegated a /59 prefix, ending with e0. That means my delegated subnets include e0 through ff. So the DHCP server seems to be starting at the top of the /56 and working its way down, in which case the next router would get a /59 prefix ending in c0.</p>
+<h1 id="the-expected-results">The expected results</h1>
+<p>Sure enough, the next pfsense instance I started up received a /59 prefix ending in c0. So that’s /64s c0 through df on vm #1, and e0 through ff on my main firewall.</p>
+<p>I repeated this five more times. I got prefixes ending in a0, 80, 60, and 40, just as expected, and each one is two /60s down from the previous one. I expected the sixth one, then, to get a prefix ending in 20. But the sixth one got nothing.</p>
+<p>Here&rsquo;s the chart above, reflecting the sequence in which the prefixes were delegated:</p>
+<h2 id="prefixes-delegated">Prefixes delegated</h2>
+<table>
+<thead>
+<tr>
+<th>/59 Subnet index</th>
+<th style="text-align:center">/60 Subnet prefix</th>
+<th>Delegated to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td style="text-align:center">E0</td>
+<td>Main firewall</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">F0</td>
+<td>Main firewall</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">C0</td>
+<td>vm1</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">D0</td>
+<td>vm1</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">A0</td>
+<td>vm2</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">B0</td>
+<td>vm2</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">80</td>
+<td>vm3</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">90</td>
+<td>vm3</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">60</td>
+<td>vm4</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">70</td>
+<td>vm4</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">40</td>
+<td>vm5</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">50</td>
+<td>vm5</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">20</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">30</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">00</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">10</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Examining the logs on the sixth vm, I saw “status code: no prefixes.” So now we know what happens when you request more than you can get: Comcast sends a notification that no more prefixes can be delegated. That&rsquo;s good!</p>
+<p>But then I noticed vm1 no longer had its c0 prefix.</p>
+<h1 id="the-unexpected-results">The unexpected results</h1>
+<p>I rebooted the vm that had lost its prefix to see if it reacquired a prefix. It did, but he prefix it acquired was e0 — the one that my main router had been assigned. Comcast had taken the prefix from my main router and re-assigned it to the first virtual machine.</p>
+<p>I looked back at the main router, and sure enough, IPv6 was down.</p>
+<p>I certainly was not expecting /both/ to get &ldquo;no prefixes&rdquo; /and/ for my oldest prefix to be revoked and reassigned. /This seems like a bug./</p>
+<p>But now, my &ldquo;production&rdquo; home network was without IPv6.</p>
+<p>In order to get my original prefix back on the firewall, I would have to convince Comcast&rsquo;s DHCP server to assign that same prefix back to my original firewall&rsquo;s DUID. With all of the prefixes now being allocated, the server was sending &ldquo;no prefixes&rdquo; messages. I thought I might try rebooting the main firewall to see if it stole another prefix from one of the VMs, but I wanted to be sure I got the prefix it had before, e0. I didn&rsquo;t want it to be left to chance.</p>
+<p>One approach would be to wait for the delegation to expire. A few minutes of searching for the lifetime of a Comcast prefix delegation turned up nothing useful. Being impatient, I decided I would have to tell Comcast to release the prefix I wanted to reclaim. A few minutes of searching on how to tell pfSense to tell a DHCPv6 server to release an address turned up nothing useful beyond going to the Status &gt; Interfaces page and clicking &ldquo;Release&rdquo; there.</p>
+<p>I wasn&rsquo;t even sure that would work. I&rsquo;ve grown accustomed to IPv6 being overlooked in rarely-used functions, and releasing an IPv6 prefix delegation seemed like the kind of thing that might get overlooked. 
+<a href="https://github.com/pfsense/pfsense/pull/3390" target="_blank" rel="nofollow noreferrer noopener">And it was</a>. Fortunately, it had been fixed in pfSense 2.4.4. So perhaps this was my ticket.</p>
+<p>Because my VM LAN interfaces were all conflicting with each other, I couldn&rsquo;t access the pfsense web configurator page for the VM that had my e0 prefix. Before dealing with that, I tried different ways to trigger a DHCP release from the command line on the console, but pfSense is different enough from plain FreeBSD that dhclient doesn&rsquo;t support the release option. Ultimately, I just shut down all the other VMs so that I could use the web interface.</p>
+<p>From there, I went to Status &gt; Interfaces, and then for both the WAN and LAN interfaces, I checked the box to relinquish the lease, then clicked Release. That took down the interface and presumably sent the DHCP release packets. Within a minute or two, my main firewall picked up its e0 delegation again.</p>
+<h1 id="wrapping-up">Wrapping up</h1>
+<p>So, back to the findings.</p>
+<p>The first firewall got the first /59. I was then able to request five more /59s. That&rsquo;s a total of six /59s Comcast is willing to delegate per customer.</p>
+<p>Why not eight? What about the other two /59s, 00 and 02?</p>
+<p>Well, the first /64 (00) is assigned to the cable modem itself, for handing out to directly-connected clients wanting an address in a /64 subnet. That would prevent delegating at least the first /59. It&rsquo;s possible that the cable modem considers the whole 00::/59, including 00::/64 and 01::/64, to belong to itself. That would make sense, if it&rsquo;s following that pattern.</p>
+<p>To test that, I picked an address out of 01::/64 and assigned it to the WAN interface on the main router. It works, meaning the cable modem routes that subnet to itself and assumes the address is on its LAN segment, without adding any static or dynamic routes to other hosts.</p>
+<p>The second /59, 02::/59, I don&rsquo;t know. Adding addresses in 02::/64 and 03::/64 to the WAN interface on the firewall does not seem to work. So those subnets must be routed elsewhere, perhaps for Comcast&rsquo;s own purposes, such as Comcast&rsquo;s WiFi hotspot service, which I don&rsquo;t use. It seems possible that 02::/64 and 03::/64 are going to that. I will not be testing that here.</p>
+<h1 id="conclusions">Conclusions</h1>
+<h2 id="multiple-firewalls-is-a-new-idea">Multiple firewalls is a new idea</h2>
+<p>Comcast&rsquo;s approach of delegating a /59 to each device asking for a prefix is unexpected, but provides some benefits. One is the ability to use more than one router behind a given cable modem. Such a thing is hard to imagine from an IPv4 perspective; you might get one or more static IPv4 addresses, but you would have to ask for them and pay extra for them. Being issued a pack of eight /59s and thereby having the ability to run multiple routers at a given site seems decadent.</p>
+<h2 id="comcast-is-not-communicating-well-about-this">Comcast is not communicating well about this</h2>
+<p>Forums are thick with posts from confused administrators, often new to IPv6, who believe the /56 assigned to their account is fully delegated to their CPE router. It is not. The /56 is delegated to the /cable modem/. Until a CPE router requests a prefix, the cable modem does not have any routes to any of the prefixes in that /56, except apparently for 00 and 01. If you want to use the other subnets within the /56, you have to use prefix delegation. The cable modem will see that you have been delegated a prefix and will automatically add a route to that prefix that points to your CPE. Without that, there is no way to set up a static route from the cable modem to a local device.</p>
+<h2 id="59-breaks-with-convention-and-causes-further-confusion">/59 breaks with convention and causes further confusion</h2>
+<p>Delegating a /59 is a tidy way of giving customers more than one /60 at a time. It&rsquo;s generous and it&rsquo;s sensible, in this writer&rsquo;s opinion. But it breaks with convention. Together with absent documentation, it leads administrators into a world of frustration.</p>
+<p>Convention would be to delegate a /60 prefix, a prefix length four bytes longer than a /56. I believe Comcast did at one time do this, because I am confident that I had routers working with /60 prefix lengths before.</p>
+<p>An administrator assuming that Comcast is following this convention is going to configure their routers for a /60 delegation, and when they get a /59, things will break in ways that might be difficult to troubleshoot.</p>
+<p>There should be better communication from Comcast about what to expect, and when things change, how things are changing.</p>
+<h1 id="caveats">Caveats</h1>
+<p>Also thick in the forums are threads describing different results with different Comcast cable modems and in different regions. I am given to understand that different areas have different teams managing the IPv6 deployment. I don&rsquo;t know to what extent that is the case, or how much variance that introduces. But it&rsquo;s possible that Comcast is not doing in other towns what it is doing here in Houston, or that a different cable modem would give me different behavior.</p>
+<p>I can say that I manage more than one Comcast account in different areas, and that they all have different models of cable modem, and this behavior is the same at all of them.</p>
+<h1 id="tldr">TL;DR</h1>
+<p>&ldquo;You&rdquo; don&rsquo;t get a /56 from Comcast, but your cable modem does. And then you can ask your cable modem for up to six /59s.</p>
+
+    </div>
+</article>
+<div class="pagination">
+    
+    <div class="prev"> <a href="/post/extended-bash-history/">Previous Post</a> </div>
+    
+    
+</div>
+
+
+        </main><footer class="site-footer">
+	<span class="left">Gohugo/0.79.1 </span> 
+	<span class="right">
+		<em>wetware</em>
+	</span>
+</footer>
+</body>
+</html>
