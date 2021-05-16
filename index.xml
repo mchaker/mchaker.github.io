@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Jan 2021 19:24:08 -0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 May 2021 20:18:18 -0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing VMware ESXi on an Intel J1900</title>
+      <link>/post/installing-esxi-on-intel-j1900/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/post/installing-esxi-on-intel-j1900/</guid>
+      <description>Attempting to install ESXi on an Intel J1900 results in an error. The boot process freezes on:
+ Relocating modules and starting up the kernel&amp;hellip;
+ The fix can be found at: https://web.archive.org/web/20210128055950/https://talesfromthedatacenter.com/2016/02/esxi-6-install-stuck-on-relocating-modules-and-starting-up-the-kernel/
+In short,
+ At the ESXi boot screen, press Shift+O to open the boot options prompt. In the boot options line that appears, add the following after a space at the end of the line: ignoreHeadless=TRUE. After the installation finishes, boot into ESXi using the ignoreHeadless=TRUE boot option.</description>
+    </item>
+    
     <item>
       <title>Comcast Business IPv6 Prefix Notes</title>
       <link>/post/comcast-business-ipv6-prefix-notes/</link>

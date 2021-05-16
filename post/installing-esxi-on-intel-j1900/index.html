@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang=en-us><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Installing VMware ESXi on an Intel J1900 - wetware</title>
+    <meta name="description" content="Attempting to install ESXi on an Intel J1900 results in an error. The boot process freezes on:
+ Relocating modules and starting up the kernel&hellip;
+ The fix can be found at: https://web.archive.org/web/20210128055950/https://talesfromthedatacenter.com/2016/02/esxi-6-install-stuck-on-relocating-modules-and-starting-up-the-kernel/
+In short,
+ At the ESXi boot screen, press Shift&#43;O to open the boot options prompt. In the boot options line that appears, add the following after a space at the end of the line: ignoreHeadless=TRUE. After the installation finishes, boot into ESXi using the ignoreHeadless=TRUE boot option.">
+    <link rel="canonical" href="/post/installing-esxi-on-intel-j1900/">
+    <meta property="og:title" content="Installing VMware ESXi on an Intel J1900">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/post/installing-esxi-on-intel-j1900/">
+    <meta property="og:description" content="Attempting to install ESXi on an Intel J1900 results in an error. The boot process freezes on:
+ Relocating modules and starting up the kernel&hellip;
+ The fix can be found at: https://web.archive.org/web/20210128055950/https://talesfromthedatacenter.com/2016/02/esxi-6-install-stuck-on-relocating-modules-and-starting-up-the-kernel/
+In short,
+ At the ESXi boot screen, press Shift&#43;O to open the boot options prompt. In the boot options line that appears, add the following after a space at the end of the line: ignoreHeadless=TRUE. After the installation finishes, boot into ESXi using the ignoreHeadless=TRUE boot option.">
+    <meta property="og:site_name" content="wetware">
+    <link rel="stylesheet" href="/css/main.min.d6240c948b42531a0323b0ece4e9499b7642d0929a9047595c57e959c11dc0bd.css" integrity="sha256-1iQMlItCUxoDI7Ds5OlJm3ZC0JKakEdZXFfpWcEdwL0=">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-66401342-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body><header class="site-header">
+    <nav class="site-nav" role="navigation" aria-label="breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/">
+    <span itemprop="name">wetware</span>
+  </a>
+  <meta itemprop="position" content="0" />
+</li>/<li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/post/">
+    <span itemprop="name">post</span>
+  </a>
+  <meta itemprop="position" content="0" />
+</li>/<li class="breadcrumb-item active hidden" aria-current="page"
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/post/installing-esxi-on-intel-j1900/">
+    <span itemprop="name">installing-esxi-on-intel-j1900</span>
+  </a>
+  <meta itemprop="position" content="1" />
+</li></ol>
+    </nav>
+    <h1 class="site-title hidden">
+		<a href="/">wetware</a>
+    </h1>
+</header>
+<main id="content">
+<article role="article" class="content post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">        
+        <h2 class="post-title" itemprop="name headline">Installing VMware ESXi on an Intel J1900</h2>
+        <span class="post-meta">
+            <time class="date-published" datetime="2021-05-15T20:18:18&#43;07:00" itemprop="datePublished">
+                Sat, 15 May 2021
+            </time>
+            
+            <ul id="tags">
+              
+                <li> <a href="/tags/vmware">#vmware</a> </li>
+              
+                <li> <a href="/tags/esxi">#esxi</a> </li>
+              
+                <li> <a href="/tags/intel">#intel</a> </li>
+              
+                <li> <a href="/tags/j1900">#j1900</a> </li>
+              
+                <li> <a href="/tags/configuration">#configuration</a> </li>
+              
+                <li> <a href="/tags/workaround">#workaround</a> </li>
+              
+            </ul>
+            
+        </span>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+        <p><strong>Attempting to install ESXi on an Intel J1900 results in an error.</strong> The boot process freezes on:</p>
+<blockquote>
+<p>Relocating modules and starting up the kernel&hellip;</p>
+</blockquote>
+<p>The fix can be found at: <a href="https://web.archive.org/web/20210128055950/https://talesfromthedatacenter.com/2016/02/esxi-6-install-stuck-on-relocating-modules-and-starting-up-the-kernel/">https://web.archive.org/web/20210128055950/https://talesfromthedatacenter.com/2016/02/esxi-6-install-stuck-on-relocating-modules-and-starting-up-the-kernel/</a></p>
+<p>In short,</p>
+<ol>
+<li>At the ESXi boot screen, press <code>Shift+O</code> to open the boot options prompt.</li>
+<li>In the boot options line that appears, add the following after a space at the end of the line: <code>ignoreHeadless=TRUE</code>.</li>
+<li>After the installation finishes, boot into ESXi using the <code>ignoreHeadless=TRUE</code> boot option.</li>
+<li>Press F2, go to Troubleshooting Options, and select &ldquo;Enable ESXi Shell&rdquo;.</li>
+<li>Press <code>Alt+F1</code> to switch to the login terminal (ESXi shell).</li>
+<li>Log in using the credentials for the root user for that ESXi host.</li>
+<li>Run the following command: <code>esxcfg-advcfg --set-kernel &quot;TRUE&quot; ignoreHeadless</code>.</li>
+<li>Check the kernel option status to make sure it was applied: <code>esxcfg-advcfg –get-kernel ignoreHeadless</code>.</li>
+<li>Type <code>exit</code> (or hit <code>Ctrl+D</code>) to log out of the ESXi shell.</li>
+<li>Switch back to the ESXi menu screen with <code>Alt+F2</code>.</li>
+<li>Disable the ESXi Shell.</li>
+<li>Reboot the ESXi host to confirm that the boot parameter was saved properly.</li>
+</ol>
+<p>Enjoy running ESXi on a tiny Celeron :)</p>
+
+    </div>
+</article>
+<div class="pagination">
+    
+    <div class="prev"> <a href="/post/comcast-business-ipv6-prefix-notes/">Previous Post</a> </div>
+    
+    
+</div>
+
+
+        </main><footer class="site-footer">
+	<span class="left">Gohugo/0.80.0 </span> 
+	<span class="right">
+		<em>wetware</em>
+	</span>
+</footer>
+</body>
+</html>

@@ -7,7 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Jan 2021 19:24:08 -0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 May 2021 20:18:18 -0700</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>configuration</title>
+      <link>/tags/configuration/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>esxi</title>
+      <link>/tags/esxi/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/tags/esxi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>intel</title>
+      <link>/tags/intel/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/tags/intel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>j1900</title>
+      <link>/tags/j1900/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/tags/j1900/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware</title>
+      <link>/tags/vmware/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/tags/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workaround</title>
+      <link>/tags/workaround/</link>
+      <pubDate>Sat, 15 May 2021 20:18:18 -0700</pubDate>
+      
+      <guid>/tags/workaround/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>comcast</title>
       <link>/tags/comcast/</link>
@@ -32,15 +86,6 @@
       <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
       
       <guid>/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>configuration</title>
-      <link>/tags/configuration/</link>
-      <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
-      
-      <guid>/tags/configuration/</guid>
       <description></description>
     </item>
     

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>howto on wetware</title>
-    <link>/categories/howto/</link>
-    <description>Recent content in howto on wetware</description>
+    <title>vmware on wetware</title>
+    <link>/tags/vmware/</link>
+    <description>Recent content in vmware on wetware</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 15 May 2021 20:18:18 -0700</lastBuildDate><atom:link href="/categories/howto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 May 2021 20:18:18 -0700</lastBuildDate><atom:link href="/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing VMware ESXi on an Intel J1900</title>
       <link>/post/installing-esxi-on-intel-j1900/</link>
@@ -19,18 +19,6 @@
  The fix can be found at: https://web.archive.org/web/20210128055950/https://talesfromthedatacenter.com/2016/02/esxi-6-install-stuck-on-relocating-modules-and-starting-up-the-kernel/
 In short,
  At the ESXi boot screen, press Shift+O to open the boot options prompt. In the boot options line that appears, add the following after a space at the end of the line: ignoreHeadless=TRUE. After the installation finishes, boot into ESXi using the ignoreHeadless=TRUE boot option.</description>
-    </item>
-    
-    <item>
-      <title>Extended Bash History</title>
-      <link>/post/extended-bash-history/</link>
-      <pubDate>Sun, 27 Dec 2020 16:09:25 -0800</pubDate>
-      
-      <guid>/post/extended-bash-history/</guid>
-      <description>link to original stack overflow post
-First, run the following to establish your extended bash history file:
-cat ~/.bash_history &amp;gt;&amp;gt; ~/.bash_history_extended I then added the following to my .bashrc:
-1 2 3 4  export HISTFILESIZE= export HISTSIZE= export HISTFILE=~/.bash_history_extended PROMPT_COMMAND=&amp;#34;history -a; $PROMPT_COMMAND&amp;#34;   Remember to run source ~/.bashrc in any running shells/terminal windows to get the latest bash history config established.</description>
     </item>
     
   </channel>
