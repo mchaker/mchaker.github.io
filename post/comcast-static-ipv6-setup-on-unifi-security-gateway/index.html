@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang=en-us><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Comcast Business Static IPv6 Setup on a UniFi Security Gateway - wetware</title>
+    <meta name="description" content="Thank you to mikehanley from the Comcast Business Support Community Forums for the dhcpv6-pd commands.
+Setting up IPv6 on a Comcast Business account is not straightforward if you are not using Comcast&rsquo;s combined modem-router.
+If you are using a UniFi Security Gateway ( SKU: USG), the following steps are necessary to get IPv6 working:
+Assumptions:
+ Comcast is providing you a /56 subnet for your IPv6 allocation You are using the UniFi web interface to manage your USG through a Cloud Key or Controller installation eth0 is your WAN interface  The interactive command-line route  In Settings &gt; Networks &gt; WAN, set the WAN interface to DHCPv6 with Prefix Delegation Size to 59 ( why 59 instead of 56) Save the new WAN network settings and wait for the USG to provision.">
+    <link rel="canonical" href="/post/comcast-static-ipv6-setup-on-unifi-security-gateway/">
+    <meta property="og:title" content="Comcast Business Static IPv6 Setup on a UniFi Security Gateway">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/post/comcast-static-ipv6-setup-on-unifi-security-gateway/">
+    <meta property="og:description" content="Thank you to mikehanley from the Comcast Business Support Community Forums for the dhcpv6-pd commands.
+Setting up IPv6 on a Comcast Business account is not straightforward if you are not using Comcast&rsquo;s combined modem-router.
+If you are using a UniFi Security Gateway ( SKU: USG), the following steps are necessary to get IPv6 working:
+Assumptions:
+ Comcast is providing you a /56 subnet for your IPv6 allocation You are using the UniFi web interface to manage your USG through a Cloud Key or Controller installation eth0 is your WAN interface  The interactive command-line route  In Settings &gt; Networks &gt; WAN, set the WAN interface to DHCPv6 with Prefix Delegation Size to 59 ( why 59 instead of 56) Save the new WAN network settings and wait for the USG to provision.">
+    <meta property="og:site_name" content="wetware">
+    <link rel="stylesheet" href="/css/main.min.d6240c948b42531a0323b0ece4e9499b7642d0929a9047595c57e959c11dc0bd.css" integrity="sha256-1iQMlItCUxoDI7Ds5OlJm3ZC0JKakEdZXFfpWcEdwL0=">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-66401342-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body><header class="site-header">
+    <nav class="site-nav" role="navigation" aria-label="breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/">
+    <span itemprop="name">wetware</span>
+  </a>
+  <meta itemprop="position" content="0" />
+</li>/<li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/post/">
+    <span itemprop="name">post</span>
+  </a>
+  <meta itemprop="position" content="0" />
+</li>/<li class="breadcrumb-item active hidden" aria-current="page"
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="/post/comcast-static-ipv6-setup-on-unifi-security-gateway/">
+    <span itemprop="name">comcast-static-ipv6-setup-on-unifi-security-gateway</span>
+  </a>
+  <meta itemprop="position" content="1" />
+</li></ol>
+    </nav>
+    <h1 class="site-title hidden">
+		<a href="/">wetware</a>
+    </h1>
+</header>
+<main id="content">
+<article role="article" class="content post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">        
+        <h2 class="post-title" itemprop="name headline">Comcast Business Static IPv6 Setup on a UniFi Security Gateway</h2>
+        <span class="post-meta">
+            <time class="date-published" datetime="2021-05-16T10:18:38&#43;07:00" itemprop="datePublished">
+                Sun, 16 May 2021
+            </time>
+            
+            <ul id="tags">
+              
+                <li> <a href="/tags/configuration">#configuration</a> </li>
+              
+                <li> <a href="/tags/ipv6">#ipv6</a> </li>
+              
+                <li> <a href="/tags/comcast">#comcast</a> </li>
+              
+                <li> <a href="/tags/unifi">#unifi</a> </li>
+              
+                <li> <a href="/tags/usg">#usg</a> </li>
+              
+            </ul>
+            
+        </span>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+        <p><em>Thank you to mikehanley from the Comcast Business Support Community Forums for 
+<a href="https://forums.businesshelp.comcast.com/conversations/ipv6/comcast-static-ipv6-setup-on-unifi-security-gateway-4p/5fe0a64ec5375f08cd9ab84b?commentId=5fe0a64ec5375f08cd9ab932" target="_blank" rel="nofollow noreferrer noopener">the <code>dhcpv6-pd</code> commands</a>.</em></p>
+<p>Setting up IPv6 on a Comcast Business account is not straightforward if you are not using Comcast&rsquo;s combined modem-router.</p>
+<p>If you are using a UniFi Security Gateway (
+<a href="https://store.ui.com/products/unifi-security-gateway" target="_blank" rel="nofollow noreferrer noopener">SKU: USG</a>), the following steps are necessary to get IPv6 working:</p>
+<p><em>Assumptions:</em></p>
+<ul>
+<li><em>Comcast is providing you a /56 subnet for your IPv6 allocation</em></li>
+<li><em>You are using the UniFi web interface to manage your USG through a Cloud Key or Controller installation</em></li>
+<li><em><code>eth0</code> is your WAN interface</em></li>
+</ul>
+<h1 id="the-interactive-command-line-route">The interactive command-line route</h1>
+<ol>
+<li>In <code>Settings &gt; Networks &gt; WAN</code>, set the WAN interface to DHCPv6 with Prefix Delegation Size to 59 (
+<a href="/post/comcast-business-ipv6-prefix-notes/">why 59 instead of 56</a>)</li>
+<li>Save the new WAN network settings and wait for the USG to provision.</li>
+<li>In <code>Settings &gt; Networks &gt; LAN</code>, set the LAN IPv6 settings to:
+<ol>
+<li>IPv6 Interface Type: <strong>Prefix Delegation</strong></li>
+<li>IPv6 Prefix Delegation Interface: <strong>WAN</strong></li>
+<li>IPv6 Prefix ID: <strong>0</strong></li>
+<li>IPv6 RA: <strong><input checked="" disabled="" type="checkbox"> Enable IPv6 Router Advertisement</strong></li>
+<li>The rest of the settings can stay default. Set manual DNS servers if you like (e.g. Google DNS)</li>
+</ol>
+</li>
+<li>Save the LAN network settings and wait for the USG to provision.</li>
+<li>SSH into the USG and run the following commands:
+<ol>
+<li><code>set interfaces ethernet eth0 dhcpv6-pd prefix-only</code></li>
+<li><code>set interfaces ethernet eth0 dhcpv6-pd rapid-commit disable</code></li>
+</ol>
+</li>
+<li>Unplug the network cable from the WAN interface, wait a few seconds, and plug the network back into the USG WAN interface.</li>
+</ol>
+<p>Now the USG should be provisioning/handing out IPv6 addresses to devices on the LAN network.</p>
+<h1 id="the-configgatewayjson-route">The <code>config.gateway.json</code> route</h1>
+<p>Add the following to your <code>config.gateway.json</code> file under the <code>eth0</code> entry/level:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;dhcpv6-pd&#34;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&#34;no-dns&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;&#39;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;pd&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;0&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;prefix-length&#34;</span><span class="p">:</span> <span class="s2">&#34;59&#34;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;prefix-only&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;&#39;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;rapid-commit&#34;</span><span class="p">:</span> <span class="s2">&#34;disable&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>So, for example, the <code>eth0</code> section of your <code>config.gateway.json</code> file might look like the following (maybe more, depending on what you have already configured):</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;eth0&#34;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;WAN&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dhcpv6-pd&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;no-dns&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;&#39;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;pd&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;0&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;prefix-length&#34;</span><span class="p">:</span> <span class="s2">&#34;59&#34;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;prefix-only&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;&#39;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;rapid-commit&#34;</span><span class="p">:</span> <span class="s2">&#34;disable&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>For the <code>config.gateway.json</code> approach, remember to force provision the USG from the UniFi controller interface after saving the <code>config.gateway.json</code> file (<code>Devices &gt; USG &gt; Config &gt; Manage Device &gt; Force provision &gt; &quot;Provision&quot; button</code>).</p>
+
+    </div>
+</article>
+<div class="pagination">
+    
+    <div class="prev"> <a href="/post/installing-esxi-on-intel-j1900/">Previous Post</a> </div>
+    
+    
+</div>
+
+
+        </main><footer class="site-footer">
+	<span class="left">Gohugo/0.80.0 </span> 
+	<span class="right">
+		<em>wetware</em>
+	</span>
+</footer>
+</body>
+</html>

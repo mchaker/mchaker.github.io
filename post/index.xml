@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 15 May 2021 20:18:18 -0700</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 10:18:38 -0700</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comcast Business Static IPv6 Setup on a UniFi Security Gateway</title>
+      <link>/post/comcast-static-ipv6-setup-on-unifi-security-gateway/</link>
+      <pubDate>Sun, 16 May 2021 10:18:38 -0700</pubDate>
+      
+      <guid>/post/comcast-static-ipv6-setup-on-unifi-security-gateway/</guid>
+      <description>Thank you to mikehanley from the Comcast Business Support Community Forums for the dhcpv6-pd commands.
+Setting up IPv6 on a Comcast Business account is not straightforward if you are not using Comcast&amp;rsquo;s combined modem-router.
+If you are using a UniFi Security Gateway ( SKU: USG), the following steps are necessary to get IPv6 working:
+Assumptions:
+ Comcast is providing you a /56 subnet for your IPv6 allocation You are using the UniFi web interface to manage your USG through a Cloud Key or Controller installation eth0 is your WAN interface  The interactive command-line route  In Settings &amp;gt; Networks &amp;gt; WAN, set the WAN interface to DHCPv6 with Prefix Delegation Size to 59 ( why 59 instead of 56) Save the new WAN network settings and wait for the USG to provision.</description>
+    </item>
+    
     <item>
       <title>Installing VMware ESXi on an Intel J1900</title>
       <link>/post/installing-esxi-on-intel-j1900/</link>

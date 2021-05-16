@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>comcast on wetware</title>
-    <link>/tags/comcast/</link>
-    <description>Recent content in comcast on wetware</description>
+    <title>unifi on wetware</title>
+    <link>/tags/unifi/</link>
+    <description>Recent content in unifi on wetware</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 16 May 2021 10:18:38 -0700</lastBuildDate><atom:link href="/tags/comcast/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 10:18:38 -0700</lastBuildDate><atom:link href="/tags/unifi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comcast Business Static IPv6 Setup on a UniFi Security Gateway</title>
       <link>/post/comcast-static-ipv6-setup-on-unifi-security-gateway/</link>
@@ -19,18 +19,6 @@ Setting up IPv6 on a Comcast Business account is not straightforward if you are 
 If you are using a UniFi Security Gateway ( SKU: USG), the following steps are necessary to get IPv6 working:
 Assumptions:
  Comcast is providing you a /56 subnet for your IPv6 allocation You are using the UniFi web interface to manage your USG through a Cloud Key or Controller installation eth0 is your WAN interface  The interactive command-line route  In Settings &amp;gt; Networks &amp;gt; WAN, set the WAN interface to DHCPv6 with Prefix Delegation Size to 59 ( why 59 instead of 56) Save the new WAN network settings and wait for the USG to provision.</description>
-    </item>
-    
-    <item>
-      <title>Comcast Business IPv6 Prefix Notes</title>
-      <link>/post/comcast-business-ipv6-prefix-notes/</link>
-      <pubDate>Tue, 05 Jan 2021 19:24:08 -0800</pubDate>
-      
-      <guid>/post/comcast-business-ipv6-prefix-notes/</guid>
-      <description>original post by John Burwell can be found here
-Here are my notes from this weekend&amp;rsquo;s IPv6 prefix exhaustion experiment.
-Comcast delegates to my router a /59 prefix, instead of a /60. This is unexpected, but it&amp;rsquo;s okay, because one /59 is two /60s. A two-fer.
-On the one hand, if you have only one router, this is a limitation; out of the /56 allocated to your account, there are 8 /59s, with only the two /60s per /59.</description>
     </item>
     
   </channel>
