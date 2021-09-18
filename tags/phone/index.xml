@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phone on wetware</title>
+    <link>/tags/phone/</link>
+    <description>Recent content in phone on wetware</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2020, mchaker; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 18 Sep 2021 11:02:39 -0700</lastBuildDate><atom:link href="/tags/phone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Porting a Verizon My Numbers Number to a full Verizon line</title>
+      <link>/post/porting-a-verizon-my-numbers-number-to-a-full-verizon-line/</link>
+      <pubDate>Sat, 18 Sep 2021 11:02:39 -0700</pubDate>
+      
+      <guid>/post/porting-a-verizon-my-numbers-number-to-a-full-verizon-line/</guid>
+      <description>Note: This assumes that you have a valid destination for the number porting (either a separate phone, or an eSIM phone like a recent iPhone).
+Backstory/context The call box for an apartment I lived in only accepted destination/resident numbers starting with certain area codes.
+My phone number did not meet that requirement, so I picked up a temporary second line from Verizon&amp;rsquo;s My Numbers app. That way, I could just use one phone, instead of buying a separate phone just to answer the door.</description>
+    </item>
+    
+  </channel>
+</rss>
