@@ -20,7 +20,7 @@ Assumptions:
  Comcast is providing you a /56 subnet for your IPv6 allocation You are using the UniFi web interface to manage your USG through a Cloud Key or Controller installation eth0 is your WAN interface  The interactive command-line route  In Settings &gt; Networks &gt; WAN, set the WAN interface to DHCPv6 with Prefix Delegation Size to 59 ( why 59 instead of 56) Save the new WAN network settings and wait for the USG to provision.">
     <meta property="og:site_name" content="wetware">
     <link rel="stylesheet" href="/css/main.min.b4ca7fabe9a0722bda9eab4c52e17ec2ce3e8de163df9ebf7917d56643f83f5c.css" integrity="sha256-tMp/q&#43;mgcivanqtMUuF&#43;ws4&#43;jeFj356/eRfVZkP4P1w=">
-    <meta name="generator" content="Hugo 0.82.1" />
+    <meta name="generator" content="Hugo 0.91.0" />
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     
@@ -127,7 +127,7 @@ if (!doNotTrack) {
 <p>Now the USG should be provisioning/handing out IPv6 addresses to devices on the LAN network.</p>
 <h1 id="the-configgatewayjson-route">The <code>config.gateway.json</code> route</h1>
 <p>Add the following to your <code>config.gateway.json</code> file under the <code>eth0</code> entry/level:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;dhcpv6-pd&#34;</span><span class="err">:</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;dhcpv6-pd&#34;</span><span class="err">:</span> <span class="p">{</span>
   <span class="nt">&#34;no-dns&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;&#39;&#34;</span><span class="p">,</span>
   <span class="nt">&#34;pd&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;0&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -138,7 +138,7 @@ if (!doNotTrack) {
   <span class="nt">&#34;rapid-commit&#34;</span><span class="p">:</span> <span class="s2">&#34;disable&#34;</span>
 <span class="p">}</span>
 </code></pre></div><p>So, for example, the <code>eth0</code> section of your <code>config.gateway.json</code> file might look like the following (maybe more, depending on what you have already configured):</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;eth0&#34;</span><span class="err">:</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;eth0&#34;</span><span class="err">:</span> <span class="p">{</span>
   <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;WAN&#34;</span><span class="p">,</span>
   <span class="nt">&#34;dhcpv6-pd&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;no-dns&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;&#39;&#34;</span><span class="p">,</span>
@@ -169,7 +169,7 @@ if (!doNotTrack) {
 
 
         </main><footer class="site-footer">
-	<span class="left">Gohugo/0.82.1 </span> 
+	<span class="left">Gohugo/0.91.0 </span> 
 	<span class="right">
 		<em>wetware</em>
 	</span>
